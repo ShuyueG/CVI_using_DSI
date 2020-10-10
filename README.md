@@ -6,7 +6,7 @@ It includes codes to compute the distance-based separability index (DSI).
 
 Related paper
 =============
-An Internal Cluster Validity Index Using a Distance-based Separability Measure
+# An Internal Cluster Validity Index Using a Distance-based Separability Measure
 
 [In press] International Conference on Tools with Artificial Intelligence (ICTAI), 2020
 
