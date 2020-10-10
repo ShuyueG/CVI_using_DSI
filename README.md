@@ -14,7 +14,7 @@ https://arxiv.org/abs/2009.01328
 
 Results
 =============
-### DSI scores of the wine recognition dataset after applying several clustering methods
+### DSI scores of the [wine recognition dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_wine.html) after applying several clustering methods
 Output in `results.txt`.
 
 * 0.6449753215024018  `ture labels`
