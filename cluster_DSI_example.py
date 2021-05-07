@@ -11,7 +11,7 @@ Clustering Methods: KMeans
                     (can add more)
 
 Related paper:      An Internal Cluster Validity Index Using a Distance-based Separability Measure
-                    [In press] International Conference on Tools with Artificial Intelligence (ICTAI), 2020
+                    International Conference on Tools with Artificial Intelligence (ICTAI), 2020
                     https://arxiv.org/abs/2009.01328
 
 By:                 Shuyue Guan
