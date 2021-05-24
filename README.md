@@ -2,7 +2,9 @@ A novel CVI: Distance-based Separability Index (DSI)
 =============
 This is an example of computing Cluster Validity Index (CVI) on datasets after clustering.
 
-It includes codes to compute the distance-based separability index (DSI).
+It includes codes to compute the distance-based separability index (DSI), which is used in another study: "Data Separability for Neural Network Classifiers and the Development of a Separability Index" (Preprint).
+
+[`Arxiv`](https://arxiv.org/abs/2005.13120)
 
 Related paper
 =============
