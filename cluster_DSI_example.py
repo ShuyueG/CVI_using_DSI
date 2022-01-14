@@ -24,6 +24,8 @@ import sklearn.datasets as skdata
 from scipy.stats import ks_2samp
 from sklearn import cluster, mixture
 from sklearn.preprocessing import StandardScaler
+from sklearn import metrics
+from sklearn.metrics.pairwise import euclidean_distances
 
 np.random.seed(0)
 
@@ -84,9 +86,50 @@ def separability_index_ks_2samp(X, labels):  # KS test on ICD and BCD
 
 #####################################################}
 
+##################### Dunn  ##################{
+""" AUTHOR: "Joaquim Viegas"
+JQM_CV - Python implementations of Dunn and Davis Bouldin clustering validity indices
+
+dunn_fast(points, labels):
+    Fast implementation of Dunn index that depends on numpy and sklearn.pairwise
+    -- No Cython implementation
+"""
+
+def dunn_fast(points, labels):
+    """ Dunn index - FAST (using sklearn pairwise euclidean_distance function)
+
+    Parameters
+    ----------
+    points : np.array
+        np.array([N, p]) of all points
+    labels: np.array
+        np.array([N]) labels of all points
+    """
+    distances = euclidean_distances(points)
+    ks = np.sort(np.unique(labels))
+
+    deltas = np.ones([len(ks), len(ks)]) * 1000000
+    big_deltas = np.zeros([len(ks), 1])
+
+    l_range = list(range(0, len(ks)))
+
+    for k in l_range:
+        for l in (l_range[0:k] + l_range[k + 1:]):
+            deltas[k, l] = delta_fast((labels == ks[k]), (labels == ks[l]), distances)
+
+        big_deltas[k] = big_delta_fast((labels == ks[k]), distances)
+
+    di = np.min(deltas) / np.max(big_deltas)
+    return di
+#####################################################}
+
 # put in CVI list ###################################
 measures = [
-    # ('name',function),
+    ## ('name',function),
+    # ('Dunn', dunn_fast),
+    # ('CH', metrics.calinski_harabasz_score),
+    # ('DB', metrics.davies_bouldin_score),
+    # ('Silhouette', metrics.silhouette_score),
     ('DSI', separability_index_ks_2samp)
 ]
 
