@@ -138,6 +138,7 @@ measures = [
     # ('CH', metrics.calinski_harabasz_score),
     # ('DB', metrics.davies_bouldin_score),
     # ('Silhouette', metrics.silhouette_score),
+    # ('ARI', metrics.adjusted_rand_score),
     ('DSI', separability_index_ks_2samp)
 ]
 
@@ -220,8 +221,15 @@ for i_dataset, dataset, algo_params in datasets:  # loop datasets
         #########################################################################
         for meas_name, method in measures:  # loop CVIs
             try:
-                if meas_name == 'DSI':
+                if meas_name == 'Silhouette':
+                    score = method(X, y_pred, metric='euclidean')
+                elif meas_name == 'DSI':
+                    score = method(X, y_pred, distance.euclidean)
+                elif meas_name == 'ARI':
+                    score = method(y, y_pred)
+                else:
                     score = method(X, y_pred)
+                    
             except:
                 score = '-'  # if error
 
