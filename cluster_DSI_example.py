@@ -10,6 +10,7 @@ CVIs:               DSI
                     CH
                     DB
                     Silhouette
+                    ARI
                     (can add more)
                     
 Clustering Methods: KMeans
