@@ -2,8 +2,16 @@
 This is an example of computing CVIs on datasets after clustering.
 It includes codes to compute the distance-based separability index (DSI).
 
-Datasets:           Optical recognition of handwritten digits dataset (can add more)
-CVIs:               DSI (can add more)
+Datasets:           Optical recognition of handwritten digits dataset
+                    (can add more)
+                    
+CVIs:               DSI 
+                    Dunn
+                    CH
+                    DB
+                    Silhouette
+                    (can add more)
+                    
 Clustering Methods: KMeans
                     Spectral Clustering
                     BIRCH
